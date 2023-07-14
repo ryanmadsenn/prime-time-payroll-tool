@@ -3,8 +3,6 @@ const fs = require("fs");
 // eslint-disable-next-line
 const { app, BrowserWindow, screen, ipcMain } = require("electron");
 // eslint-disable-next-line
-const XLSX = require("sheetjs-style");
-// eslint-disable-next-line
 const path = require("path");
 // eslint-disable-next-line
 const isDev = require("electron-is-dev");
