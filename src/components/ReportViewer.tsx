@@ -21,6 +21,7 @@ import {
 } from "@chakra-ui/react";
 import HygienistReportAccordion from "./HygienistReportAccordion";
 import AssistantReportAccordion from "./AssistantReportAccordion";
+import ReappointmentRateAccordion from "./ReappointmentRateAccordion";
 
 interface ReportViewerProps {
   config?: QueryConfig;
@@ -194,33 +195,29 @@ const ReportViewer = ({
         </TabPanel>
       </TabPanels>
     </Tabs>
-  ) : currentReport === 2 && !loading && reappointmentRateReport ? (
-    <TableContainer overflowY="auto" flexGrow={1}>
-      <Table variant="simple">
-        <Thead
-          position="sticky"
-          top="0"
-          zIndex={1}
-          bg="white"
-          outline="solid 1px #efefef"
-        >
-          <Tr>
-            <Th>Hygienist</Th>
-            <Th>Appts Completed YTD</Th>
-            <Th>Reappointment Rate</Th>
-          </Tr>
-        </Thead>
-        <Tbody>
-          {reappointmentRateReport?.map((row) => (
-            <Tr key={row.ProvHyg}>
-              <Td>{`${row.FName} ${row.LName}`}</Td>
-              <Td>{row.CompletedAppts}</Td>
-              <Td>{row.ReappointmentRate.toFixed(2)}%</Td>
-            </Tr>
-          ))}
-        </Tbody>
-      </Table>
-    </TableContainer>
+  ) : currentReport === 2 && !loading && config && reappointmentRateReport ? (
+    <Accordion allowMultiple={true} w="100%">
+      <Grid
+        templateColumns="1fr 1fr 1fr 1fr 20px"
+        p="10px 25px"
+        fontFamily="heading"
+        textTransform="uppercase"
+        fontWeight="bold"
+        fontSize="12px"
+        color="gray.600"
+      >
+        <Box textAlign="left">Hygienist</Box>
+        <Box>Appts Completed</Box>
+        <Box>Prime-time Pay</Box>
+        <Box>Reappointment Rate</Box>
+      </Grid>
+      {reappointmentRateReport?.map((row) => (
+        <ReappointmentRateAccordion
+          reappointmentRateReport={row}
+          config={config}
+        />
+      ))}
+    </Accordion>
   ) : loading ? (
     <>
       <Flex flexDir="column" p="10px" gap="10px" w="100%">

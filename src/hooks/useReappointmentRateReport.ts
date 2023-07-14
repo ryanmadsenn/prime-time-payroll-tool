@@ -18,7 +18,7 @@ const useReapointmentRateReport = (report?: QueryConfig) => {
                     (SELECT COUNT(*) 
                     FROM appointment a1 
                     WHERE a1.ProvHyg = a.ProvHyg 
-                    AND YEAR(AptDateTime) >= YEAR(NOW()) 
+                    AND a1.AptDateTime BETWEEN '${config.startDate}' AND '${config.endDate}'
                     AND ClinicNum = ${config.clinic}
                     AND AptStatus = 2 
                     AND 
@@ -31,7 +31,7 @@ const useReapointmentRateReport = (report?: QueryConfig) => {
                   FROM appointment a 
                   INNER JOIN provider p 
                   ON a.ProvHyg = p.ProvNum 
-                  WHERE YEAR(a.AptDateTime) >= YEAR(NOW())
+                  WHERE a.AptDateTime BETWEEN '${config.startDate}' AND '${config.endDate}'
                   AND a.ClinicNum = ${config.clinic} 
                   AND a.AptStatus = 2 
                   AND p.IsSecondary = 1 

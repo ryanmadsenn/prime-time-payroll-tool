@@ -7,7 +7,7 @@ const useHygienistAppointmentQuery = () => {
     useState<HygienistAppointment[]>();
 
   const getHygienistAppointments = async (
-    hygienistReport: HygienistReport,
+    hygienistReport: HygienistReport | ReappointmentRateReport,
     config: QueryConfig
   ) => {
     const body = {

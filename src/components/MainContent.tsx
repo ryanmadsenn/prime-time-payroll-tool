@@ -65,7 +65,12 @@ const MainContent = () => {
     ) {
       setLoading(false);
     }
-  }, [hygienistReport, assistantReport, reappointmentRateReport]);
+  }, [
+    hygienistReport,
+    assistantReport,
+    frontDeskReport,
+    reappointmentRateReport,
+  ]);
 
   useEffect(() => {
     const titlebar = document.getElementById("titlebar");

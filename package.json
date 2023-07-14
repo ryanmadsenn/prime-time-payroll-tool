@@ -40,7 +40,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron-dev": "electron .",
-    "dev": "concurrently \"npm start\" \"npm run electron\"",
+    "dev": "concurrently \"BROWSER=none pnpm start\" \"pnpm run electron\"",
     "electron": "wait-on http://127.0.0.1:3000 && electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
