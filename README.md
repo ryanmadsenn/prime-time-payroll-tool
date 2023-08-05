@@ -35,16 +35,21 @@ This software automates the entire bonus-pay calculation process. The office man
 ![Main View](./readme-images/pt-tool-main-view.png)
 
 ### Hygienist Report View
+This view shows the prime-time pay for each hygienist as well as the re-appointment rate for their completed appointments
 ![Hygienist Report View](./readme-images/pt-tool-hygienist-report-view.png)
 
 ### Hygienist Report View Expanded
+Each hygienist row can be expanded to show which appointments are being considered in the calculations. This promotes confidence in the calculations and makes it easier to find any issues
 ![Hygienist Report View Expanded](./readme-images/pt-tool-hygienist-report-view-expanded.png)
 
 ### Assistant Report View
+This view shows the prime-time pay for each assistant. Each row can be expanded to show which days they are receiving bonus pay for, along with the stats for those days. The front desk report looks the same as this
 ![Assistant Report View](./readme-images/pt-tool-assistant-view.png)
 
 ### Combined Report View
+An abbreviated version of all the reports for easy viewing
 ![Combined Report View](./readme-images/pt-tool-combined-view.png)
 
 ### Re-appointment Rate Report View
+The same as the hygienist report excluding prime-time pay
 ![Re-appointment Rate Report View](./readme-images/pt-tool-reappointment-rate-view.png)
