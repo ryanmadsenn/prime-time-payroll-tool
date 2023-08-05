@@ -31,6 +31,9 @@ This software automates the entire bonus-pay calculation process. The office man
 
 ## Sreenshots
 
+### Main View
+![Main View](./readme-images/pt-tool-main-view.png)
+
 ### Hygienist Report View
 ![Hygienist Report View](./readme-images/pt-tool-hygienist-report-view.png)
 
