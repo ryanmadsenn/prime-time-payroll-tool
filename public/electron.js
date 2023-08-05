@@ -51,11 +51,9 @@ const createMainWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,
-      // contextIsolation: false,
     },
   });
 
-  // mainWindow.loadURL(`file://${path.join(__dirname, "../build/index.html")}`);
   mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"
